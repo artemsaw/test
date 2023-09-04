@@ -1,16 +1,25 @@
 <?php
-ini_set('error_reporting', E_ALL);
-//include 'variable.php';
-//require_once "classabout.php";
+session_start();
+
+date_default_timezone_set("Pacific/Naur");
+
+if(!isset($_SESSION['times']))
+{
+    $_SESSION['times'] = date("H:i:s"); 
+} else {
+    $_SESSION['times'];
+}
+
+echo $_SESSION['times'];
+
+unset($_SESSION['test']); //
+
+
+//session_destroy();
 
 ?>
 
-<form action="" method="post">
-    <label for="celsium">Переведите градусы из цельсия в фаренгейт:</label>
-    <input type="text" name="celsium" id="celsium" 
-    value= <?= $_POST['celsium'] ?? '0'?>>
-    <input type="submit">
-</form>
+
 
 
 
