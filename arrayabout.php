@@ -69,4 +69,50 @@ foreach ($arr as $value) {
     echo $value . "<br>";
 }
 
+echo "<br>";
+echo "Перебор многомерных массивов в PHP" . "<br>";
+
+
+$arrMany = [
+    ['a', 'b', 'c'],
+    ['d', 'e', 'f'],
+    ['g', 'h', 'i'],
+];
+
+foreach($arrMany as $sub){
+    foreach($sub as $elem){
+        echo $elem . ", ";
+    }
+}
+
+
+echo "<br>";
+echo "Перебор многомерных ассооциативных массивов" . "<br>";
+
+$users = [
+    [
+        'name'   => 'user1',
+        'age'    => 31,
+        'salary' => 1000,
+    ],
+    [
+        'name'   => 'user2',
+        'age'    => 32,
+        'salary' => 2000,
+    ],
+    [
+        'name'   => 'user3',
+        'age'    => 33,
+        'salary' => 3000,
+    ],
+];
+
+
+foreach ($users as $user ) 
+{
+    echo $user['name'] . ":" . $user['age'] . ":" . $user['salary'] . "<br>";
+}
+
+
+
 ?>
