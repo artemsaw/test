@@ -1,6 +1,15 @@
 <?php
 
 session_start();
-$_SESSION['test'] = "some text";
+echo session_id();
+
+if(!isset($_SESSION['test']))
+{
+    $_SESSION['test'] = 1;
+} else {
+    $_SESSION['test']++;
+}
+
+echo $_SESSION['test'];
 
 ?>
