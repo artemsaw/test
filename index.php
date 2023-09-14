@@ -1,13 +1,14 @@
 <?php
 
-function pushDataIntoVariable($somePath){
-    ob_start();
-    include $somePath;
-    return ob_get_clean();
-}
+mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
-$myVar = pushDataIntoVariable('dir1/test.php');
+$mysqli = mysqli_connect('localhost', 'root', '', 'mydb');
 
-echo $myVar;
+/* Set the desired charset after establishing a connection */
+mysqli_set_charset($mysqli, 'utf8mb4');
+
+printf("Success... %s\n", mysqli_get_host_info($mysqli));
+
+
 
 ?>
